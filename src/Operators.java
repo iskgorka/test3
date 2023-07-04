@@ -1,26 +1,9 @@
 
 public class Operators {
     public static void main(String[] args) {
-        int b = 19;
-        int d = 2;
-        int j = 2;
-        int k = 200;
-        int a = 0;
-        int c = 0;
-        int i = 10;
-        if (i == 10) {
-            if (j < 20) a = b;
-            System.out.println("a = " + a); // a = 19
-            if (k > 200) c = d;
-            System.out.println("c = " + c); // c = 0
-            a = c;
-        } c = 300;
-        System.out.println("a = " + a); // a = 0
-        System.out.println("b = " + b); // b = 19
-        System.out.println("c = " + c); // c = 300
-        System.out.println("d = " + d); // d = 2
 
     }
+}
 
         /*
 Example 1
@@ -44,7 +27,7 @@ Ternary Operator
         k = i < 0 ? -i : i; // i = -10; k = 10
         System.out.println("i = " + i + ", k = " + k);
 
-Example 3
+Example Precedence/Приоритетность выполнения операций
         int x = 19;
         int y = 3;
         int z = 3;
@@ -54,5 +37,127 @@ Example 3
         int b = x % y * z;
         System.out.println("b = " + b); //6
 
+IF Example
+        int b = 19;
+        int d = 2;
+        int j = 2;
+        int k = 200;
+        int a = 0;
+        int c = 0;
+        int i = 10;
+        if (i == 10) {
+            if (j < 20) a = b;
+            System.out.println("a = " + a); // a = 19
+            if (k > 100) c = d;
+            System.out.println("c = " + c); // c = 2
+            a = c;
+        } c = 300;
+        System.out.println("a = " + a); // 2
+        System.out.println("b = " + b); // 19
+        System.out.println("c = " + c); // 300
+        System.out.println("d = " + d); // 2
+
+If-then-else example
+        int month = 4;
+        String season;
+        if (month == 12 || month == 1 || month == 2) season = "зиме";
+        else if (month == 3 || month == 4 || month == 5) season = "весне";
+        else if (month == 6 || month == 7 || month == 8) season = "лету";
+        else if (month == 9 || month == 10 || month == 11) season = "осени";
+        else season = "вымешленным месяцам";
+        System.out.println("Апрель относится к " + season + ".");
+
+Switch example 1
+        int i = 0;
+        switch (i){
+            case 0:
+                System.out.println("i равен нулю.");
+                break;
+            case 1:
+                System.out.println("i равен единице.");
+                break;
+            case 2:
+                System.out.println("i равен двум.");
+                break;
+            case 3:
+                System.out.println("i равен трем.");
+                break;
+            default:
+                System.out.println("i больше трех");
+        }
+
+Switch example 2
+        String month = "апрель";
+        String season;
+        switch (month){
+            case "декабрь":
+            case "январь":
+            case "февраль":
+                season = "зиме";
+                break;
+            case "март":
+            case "апрель":
+            case "май":
+                season = "весне";
+                break;
+            case "июнь":
+            case "июль":
+            case "август":
+                season = "лету";
+                break;
+            case "сентябрь":
+            case "октябрь":
+            case "ноябрь":
+                season = "осени";
+                break;
+            default:
+                season = "вымешлинным месяцам";
+                break;
+        }
+        System.out.println("Апрель относится к " + season + ".");
+
+Простое - Непростое число
+        int num;
+        boolean isPrime;
+        num = 17;
+        if (num < 2) isPrime = false;
+        else isPrime = true;
+        for (int i = 2; i <= num / i; i++) {
+            if ((num % i) == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) System.out.println("Простое число");
+        else System.out.println("Непростое число");
+
+Сумма элементов массива
+        int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            sum = sum + nums[i];
+            System.out.println("Сумма равна = " + sum);
+
+        int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int sum = 0;
+        for (int x : nums) {
+            sum = sum + x;
+            System.out.println("X = " + x);
+            System.out.println("Сумма равна = " + sum);
+            if(x==5) break;
+        }
+        System.out.println("Сумма равна = " + sum);
+
+Найти значение в массиве
+        int nums[] = {4, 6, 8, 3, 2, 9, 1};
+        int val = 100;
+        boolean found = false;
+        for (int x : nums) {
+            if (x == val) {
+                found = true;
+                break;
+            }
+        }
+        if (found) System.out.println("The value is found!");
+        else System.out.println("The value isn't found.");
         */
-    }
