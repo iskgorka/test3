@@ -1,7 +1,19 @@
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Operators {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        int nums[] = {4, 6, 8, 3, 2, 9, 1};
+        int val = 100;
+        boolean found = false;
+        for (int x : nums) {
+            if (x == val) {
+                found = true;
+                break;
+            }
+        }
+        if (found) System.out.println("The value is found!");
+        else System.out.println("The value isn't found.");
     }
 }
 
@@ -37,7 +49,7 @@ Example Precedence/Приоритетность выполнения опера�
         int b = x % y * z;
         System.out.println("b = " + b); //6
 
-IF Example
+If Example
         int b = 19;
         int d = 2;
         int j = 2;
@@ -116,7 +128,53 @@ Switch example 2
         }
         System.out.println("Апрель относится к " + season + ".");
 
-Простое - Непростое число
+While example
+        int n = 10;
+        while (n>0){
+            System.out.println("n = " + n);
+            n--;
+        }
+
+While example 2 - цикл без тела
+        int i = 100;
+        int j = 200;
+        while (++i < --j);
+        System.out.println("Среднее значение = " + i);
+
+Do while example 1
+        int i = 10;
+        do {
+            System.out.println("i = " + i);
+        } while (--i > 0);
+
+Do while example 2
+        char choise;
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Справка по оператору:");
+            System.out.println(" 1 if");
+            System.out.println(" 2 switch");
+            System.out.println(" 3 while");
+            System.out.println(" Выберете нужный пункт!");
+            choise = sc.nextLine().charAt(0); //Scanner; Reader; System.in.read()
+        } while (choise < '1' || choise > '3');
+        System.out.println();
+        switch (choise) {
+            case '1':
+                System.out.println("if:");
+                System.out.println("if(yсловие) оператор;");
+                break;
+            case '2':
+                System.out.println("switch:");
+                System.out.println("switch(выражение) case:");
+                break;
+            case '3':
+                System.out.println("while:");
+                System.out.println("while(yсловие) оператор;");
+                break;
+        }
+
+For Example 1  Простое - Непростое число
         int num;
         boolean isPrime;
         num = 17;
@@ -131,7 +189,33 @@ Switch example 2
         if (isPrime) System.out.println("Простое число");
         else System.out.println("Непростое число");
 
-Сумма элементов массива
+For Example 2
+        int a, b;
+        for (a = 1, b = 4; a < b; a++, b--) {
+            System.out.println("a = " + a + ", b = " + b);
+        }
+
+For Example 3
+        int a = 1;
+        boolean done = false;
+        for (int i = 1; !done; i++) {
+            a++;
+            System.out.println("a = " + a);
+            if (a > 3) done = true;
+            System.out.println("done = " + done);
+        }
+
+For Example 4
+        int i;
+        boolean done = false;
+        i = 0;
+        for (; !done; ) {
+            System.out.println("i = " + i);
+            if (i == 10) done = true;
+            i++;
+        }
+
+For each example - Сумма элементов массива
         int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int sum = 0;
         for (int i = 0; i < 10; i++) {
@@ -148,7 +232,7 @@ Switch example 2
         }
         System.out.println("Сумма равна = " + sum);
 
-Найти значение в массиве
+For each example - Найти значение в массиве
         int nums[] = {4, 6, 8, 3, 2, 9, 1};
         int val = 100;
         boolean found = false;
