@@ -3,17 +3,7 @@ import java.util.Scanner;
 
 public class Operators {
     public static void main(String[] args) throws IOException {
-        int nums[] = {4, 6, 8, 3, 2, 9, 1};
-        int val = 100;
-        boolean found = false;
-        for (int x : nums) {
-            if (x == val) {
-                found = true;
-                break;
-            }
-        }
-        if (found) System.out.println("The value is found!");
-        else System.out.println("The value isn't found.");
+
     }
 }
 
